@@ -32,17 +32,6 @@ let to   = '35157375@qq.com'
 router.use('/test', async (ctx)=>{
   var nodemailer = require('nodemailer');
 
-  // var transporter = nodemailer.createTransport(({
-  //   service: 'gmail',
-  //   host: 'smtp.gmail.com',
-  //   // secureConnection: true,
-  //   port: 465,
-  //   auth: {
-  //     user: from,
-  //     pass: psw
-  //   }
-  // }));
-
   var transporter = nodemailer.createTransport('smtps://robbwook%40gmail.com:'+psw+'@smtp.gmail.com');
   
   var mailOptions = {
