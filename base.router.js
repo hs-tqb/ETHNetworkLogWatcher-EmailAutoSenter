@@ -38,19 +38,25 @@ router.use('/test', async (ctx)=>{
     from: from,
     to: to,
     subject: 'Sending Email using Node.js[nodemailer]',
-    text: 'That was easy!'
+    html: `
+    <h1>111111111</h1>
+    <p>pppp</p>
+    <a href="http://www.baidu.com" target="_blank">aaaa</a>
+    `
   };
   
-  transporter.sendMail(mailOptions, function(error, info){
-    if (error) {
-      console.log(error);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
-  });
-
-  console.log( '收到请求' )
-  ctx.body = JSON.stringify({name:'sdf'})
+  await new Promise((resolve,reject)=>{
+    transporter.sendMail(mailOptions, function(error, info){
+      if (error) {
+        console.log(error);
+        ctx.body = JSON.stringify({state:0})
+      } else {
+        // console.log('Email sent: ' + info.response);
+        ctx.body = JSON.stringify({state:1})
+      }
+      resolve();
+    });
+  })
 })
 
 // 我们可以用下面的中间件理解app.use(cors({}))
