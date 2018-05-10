@@ -1,0 +1,21 @@
+{
+  "name": "contractresultwatcher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index"
+  },
+  "dependencies": {
+    "emailjs": "^2.0.0",
+    "koa": "^2.5.1",
+    "koa-router": "^7.4.0",
+    "nodemailer": "^4.6.4",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "nodemon": "^1.17.4",
+    "web3": "^0.20.0"
+  },
+  "author": "hs",
+  "license": "ISC"
+}
