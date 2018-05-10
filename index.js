@@ -3,10 +3,10 @@ const router = require('./base.router')
 
 const koa    = new Koa()
 
-
 koa.use(router.routes())
-   .use(router.allowedMethods())
-  
-  
-koa.listen(7000)
-console.log('server runnint at 7000')
+.use(router.allowedMethods())
+
+
+const port   = 3100
+koa.listen(port)
+console.log('server runnint at '+port)
