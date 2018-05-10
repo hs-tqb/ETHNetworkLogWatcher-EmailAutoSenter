@@ -36,7 +36,7 @@ router.use('/test', async (ctx)=>{
     service: 'gmail',
     host: 'smtp.gmail.com',
     // secureConnection: true,
-    port: 25,
+    port: 465,
     auth: {
       user: from,
       pass: psw
